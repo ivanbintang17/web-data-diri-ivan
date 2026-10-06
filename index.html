@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Data Diri</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: white;
+            margin: 0 auto 15px;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .profile-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-header p {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card-header i {
+            font-size: 1.2rem;
+            color: #38bdf8;
+        }
+
+        .card-header h3 {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #38bdf8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            .profile-header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-header">
+            <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <!-- UBAH NAMA ANDA DI SINI -->
+            <h1>Nama Lengkap Anda</h1>
+            <p>Ivan Adrian Mayzza Bintang</p>
+        </div>
+
+        <div class="grid-info">
+            <!-- NIM -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-id-card"></i>
+                    <h3>NIM</h3>
+                </div>
+                <!-- UBAH NIM DI SINI -->
+                <p>2405110043</p>
+            </div>
+
+            <!-- Program Studi -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Program Studi</h3>
+                </div>
+                <!-- UBAH PRODI DI SINI -->
+                <p>Teknik Komputer</p>
+            </div>
+
+            <!-- Tahun Angkatan -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h3>Tahun Angkatan</h3>
+                </div>
+                <!-- UBAH ANGKATAN DI SINI -->
+                <p>2024</p>
+            </div>
+
+            <!-- Kesibukan Selain Kuliah -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>Kesibukan Lain</h3>
+                </div>
+                <!-- UBAH KESIBUKAN DI SINI -->
+                <p>Aktif Organisasi Kampus, Event Organizer, Kerja Sampingan</p>
+            </div>
+
+            <!-- Cita-cita -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Cita-Cita</h3>
+                </div>
+                <!-- UBAH CITA-CITA DI SINI -->
+                <p>Menjadi Engineer Profesional di Perusahaan Multinasional</p>
+            </div>
+
+            <!-- Bidang IT yang Ingin Didalami -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Fokus Bidang IT</h3>
+                </div>
+                <!-- UBAH BIDANG IT DI SINI -->
+                <p class="highlight">System Administrator & Network Engineering</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Web Portofolio Data Diri | Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+
+</body>
+</html>

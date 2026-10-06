@@ -3,317 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivan Adrian | Profil Resmi & Visi Kepemimpinan</title>
+    <title>Ivan Adrian | Terrace & Football Culture Edition</title>
     <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --navy-political: #0b192c;
-            --red-flag: #c62828;
-            --gold-accent: #d4af37;
-            --gold-light: #f3e5ab;
-            --bg-body: #070e17;
-            --card-bg: rgba(15, 28, 48, 0.85);
-            --border-gold: rgba(212, 175, 55, 0.3);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --pitch-green: #10b981;
+            --stadium-dark: #0a0f0d;
+            --card-bg: #121a16;
+            --neon-yellow: #ccff00;
+            --text-white: #f3f4f6;
+            --text-dim: #829a8c;
+            --border-line: rgba(16, 185, 129, 0.3);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: var(--stadium-dark);
+            /* Pola Latar Belakang Lapangan / Rumput / Line Stadion */
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(198, 40, 40, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 100% 100%, rgba(11, 25, 44, 0.8) 0%, transparent 50%);
-            color: var(--text-main);
+                linear-gradient(rgba(16, 185, 129, 0.05) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.05) 2px, transparent 2px);
+            background-size: 40px 40px;
+            color: var(--text-white);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 30px 15px;
         }
 
-        .campaign-card {
-            max-width: 900px;
+        .terrace-card {
+            max-width: 850px;
             width: 100%;
             background: var(--card-bg);
-            border: 2px solid var(--border-gold);
-            border-radius: 20px;
-            padding: 0;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border: 3px solid var(--pitch-green);
+            border-radius: 16px;
+            box-shadow: 12px 12px 0px var(--neon-yellow);
+            padding: 35px;
+            position: relative;
             overflow: hidden;
-            position: relative;
         }
 
-        /* Banner Merah Putih / Merdeka Top Header */
-        .top-banner {
-            background: linear-gradient(90deg, #b71c1c 0%, #d32f2f 50%, #b71c1c 100%);
-            padding: 12px 20px;
-            text-align: center;
-            color: #fff;
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--gold-accent);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-content {
-            padding: 40px 40px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .candidate-number {
-            display: inline-block;
-            background: var(--gold-accent);
-            color: var(--navy-political);
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
+        /* Pita Matchday Top */
+        .matchday-tape {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--neon-yellow);
+            color: #000;
+            font-family: 'Teko', sans-serif;
             font-size: 1.2rem;
-            padding: 6px 20px;
-            border-radius: 30px;
-            margin-bottom: 15px;
+            font-weight: 700;
+            padding: 4px 40px;
+            transform: rotate(12deg);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            letter-spacing: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 10;
         }
 
-        .header-content h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 1px;
+        .header-terrace {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 2px dashed var(--border-line);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* Badge Logo Klub / Ultras */
+        .crest-badge {
+            width: 90px;
+            height: 90px;
+            background: var(--pitch-green);
+            border: 3px solid var(--neon-yellow);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.8rem;
+            color: var(--stadium-dark);
+            transform: rotate(-3deg);
+            box-shadow: 4px 4px 0px var(--neon-yellow);
+            flex-shrink: 0;
+        }
+
+        .player-info h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 3rem;
+            line-height: 0.9;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .header-content p {
-            color: var(--gold-light);
-            font-size: 1.1rem;
-            font-weight: 600;
+            color: #fff;
             letter-spacing: 1px;
         }
 
-        /* Divider Pita Politik */
-        .political-divider {
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
-            margin: 20px auto;
-            width: 80%;
+        .player-info .squad-tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--neon-yellow);
+            border: 1px solid var(--pitch-green);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 8px;
+            letter-spacing: 1px;
         }
 
-        .content-body {
-            padding: 20px 40px 40px;
-        }
-
-        .grid-manifesto {
+        /* Grid Data Diri ala Lineup / Ticket */
+        .squad-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
-        .manifesto-box {
-            background: rgba(11, 25, 44, 0.7);
-            border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            padding: 22px;
-            position: relative;
-            transition: all 0.3s ease;
+        .grid-item {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-line);
+            border-left: 5px solid var(--pitch-green);
+            border-radius: 8px;
+            padding: 18px;
+            transition: all 0.2s ease;
         }
 
-        .manifesto-box:hover {
-            transform: translateY(-4px);
-            border-color: var(--gold-accent);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
-            background: rgba(15, 32, 56, 0.9);
+        .grid-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--neon-yellow);
+            border-left-color: var(--neon-yellow);
+            background: rgba(16, 185, 129, 0.08);
         }
 
-        .manifesto-box.span-2 {
+        .grid-item.span-2 {
             grid-column: span 2;
         }
 
-        .box-header {
+        .item-label {
+            font-family: 'Teko', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
+            gap: 8px;
         }
 
-        .box-header i {
-            color: var(--gold-accent);
-            font-size: 1.3rem;
+        .item-label i {
+            color: var(--neon-yellow);
         }
 
-        .box-header h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            color: var(--gold-light);
+        .item-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        .item-val.neon {
+            color: var(--neon-yellow);
+            font-family: 'Teko', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+
+        /* Banner Chants / Slogan Bottom */
+        .chants-banner {
+            margin-top: 30px;
+            background: linear-gradient(90deg, var(--pitch-green), #047857);
+            color: var(--stadium-dark);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 4px 4px 0px var(--neon-yellow);
+        }
+
+        footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .box-value {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1.5;
-        }
-
-        .box-value.highlight-gold {
-            color: var(--gold-accent);
-            font-family: 'Cinzel', serif;
-            font-size: 1.15rem;
-        }
-
-        /* Slogan Banner Bottom */
-        .slogan-banner {
-            background: rgba(198, 40, 40, 0.2);
-            border: 1px solid var(--red-flag);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            margin-top: 25px;
-        }
-
-        .slogan-banner h4 {
-            font-family: 'Cinzel', serif;
-            color: #ffffff;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .slogan-banner p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        footer {
-            background: #050a10;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid var(--border-gold);
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        @media (max-width: 680px) {
-            .manifesto-box.span-2 {
+        @media (max-width: 650px) {
+            .header-terrace {
+                flex-direction: column;
+                text-align: center;
+            }
+            .player-info h1 {
+                font-size: 2.2rem;
+            }
+            .grid-item.span-2 {
                 grid-column: span 1;
             }
-            .header-content h1 {
-                font-size: 1.5rem;
+            .terrace-card {
+                padding: 25px 18px;
             }
-            .header-content {
-                padding: 30px 20px 10px;
-            }
-            .content-body {
-                padding: 15px 20px 30px;
+            .matchday-tape {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="campaign-card">
-        <!-- Top Status Bar -->
-        <div class="top-banner">
-            <span><i class="fa-solid fa-flag"></i> PROFIL KEPEMIMPINAN</span>
-            <span>PERIODE 2024 - 2028</span>
-        </div>
+    <div class="terrace-card">
+        <!-- Tape Sticker / Ticket Stamp -->
+        <div class="matchday-tape">SQUAD NO #24</div>
 
-        <!-- Header Politisi -->
-        <div class="header-content">
-            <div class="candidate-number">
-                <i class="fa-solid fa-check-double"></i> NO. REGIST: 2405110043
+        <!-- Header Profil Ala Jersey / Crest -->
+        <div class="header-terrace">
+            <div class="crest-badge">
+                <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h1>Ivan Adrian Mayzza Bintang</h1>
-            <p>Satu Komando untuk Kemajuan & Inovasi Teknologi</p>
-            <div class="political-divider"></div>
-        </div>
-
-        <!-- Body / Data Diri / Program Kerja -->
-        <div class="content-body">
-            <div class="grid-manifesto">
-                <!-- NIM -->
-                <div class="manifesto-box">
-                    <div class="box-header">
-                        <i class="fa-solid fa-id-card"></i>
-                        <h3>Nomor Induk Mahasiswa</h3>
-                    </div>
-                    <div class="box-value">2405110043</div>
-                </div>
-
-                <!-- Tahun Angkatan -->
-                <div class="manifesto-box">
-                    <div class="box-header">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <h3>Basis Masa / Angkatan</h3>
-                    </div>
-                    <div class="box-value">Angkatan 2024</div>
-                </div>
-
-                <!-- Program Studi -->
-                <div class="manifesto-box span-2">
-                    <div class="box-header">
-                        <i class="fa-solid fa-building-columns"></i>
-                        <h3>Program Studi Utama</h3>
-                    </div>
-                    <div class="box-value">Teknik Komputer</div>
-                </div>
-
-                <!-- Kesibukan Lain -->
-                <div class="manifesto-box span-2">
-                    <div class="box-header">
-                        <i class="fa-solid fa-users-line"></i>
-                        <h3>Rekam Jejak & Kesibukan Organisasi</h3>
-                    </div>
-                    <div class="box-value">Aktif Organisasi Kampus, Event Organizer, & Kerja Sampingan</div>
-                </div>
-
-                <!-- Cita-Cita -->
-                <div class="manifesto-box span-2">
-                    <div class="box-header">
-                        <i class="fa-solid fa-award"></i>
-                        <h3>Visi Cita-Cita Utama</h3>
-                    </div>
-                    <div class="box-value">Menjadi Engineer Profesional di Perusahaan Multinasional</div>
-                </div>
-
-                <!-- Bidang IT Fokus -->
-                <div class="manifesto-box span-2">
-                    <div class="box-header">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <h3>Sektor IT Strategis Yang Didalami</h3>
-                    </div>
-                    <div class="box-value highlight-gold">System Administrator & Network Engineering</div>
-                </div>
-            </div>
-
-            <!-- Slogan Kampanye -->
-            <div class="slogan-banner">
-                <h4>"TEKNOLOGI KUAT, INFRASTRUKTUR TEGAS, INDONESIA MAJU"</h4>
-                <p>Mengabdi dengan Dedikasi Melalui Keahlian Jaringan & Sistem Komputer.</p>
+            <div class="player-info">
+                <h1>Ivan Adrian M. B.</h1>
+                <span class="squad-tag"><i class="fa-solid fa-futbol"></i> COMPUTER ENGINEERING FC</span>
             </div>
         </div>
 
-        <!-- Footer Resmi -->
+        <!-- Lineup Squad Details -->
+        <div class="squad-grid">
+            <!-- NIM -->
+            <div class="grid-item">
+                <div class="item-label">
+                    <i class="fa-solid fa-shirt"></i> SQUAD NUMBER / NIM
+                </div>
+                <div class="item-val neon">2405110043</div>
+            </div>
+
+            <!-- Angkatan -->
+            <div class="grid-item">
+                <div class="item-label">
+                    <i class="fa-solid fa-calendar-day"></i> SEASON / ANGKATAN
+                </div>
+                <div class="item-val">CLASS OF 2024</div>
+            </div>
+
+            <!-- Program Studi -->
+            <div class="grid-item span-2">
+                <div class="item-label">
+                    <i class="fa-solid fa-graduation-cap"></i> DIVISION / PRODI
+                </div>
+                <div class="item-val">TEKNIK KOMPUTER</div>
+            </div>
+
+            <!-- Kesibukan Lain -->
+            <div class="grid-item span-2">
+                <div class="item-label">
+                    <i class="fa-solid fa-bullhorn"></i> OFF-PITCH ACTIVITIES
+                </div>
+                <div class="item-val">AKTIF ORGANISASI KAMPUS, EVENT ORGANIZER, & KERJA SAMPINGAN</div>
+            </div>
+
+            <!-- Cita-Cita -->
+            <div class="grid-item span-2">
+                <div class="item-label">
+                    <i class="fa-solid fa-trophy"></i> MAIN GOAL / CITA-CITA
+                </div>
+                <div class="item-val">MENJADI ENGINEER PROFESIONAL DI PERUSAHAAN MULTINASIONAL</div>
+            </div>
+
+            <!-- Bidang IT Fokus -->
+            <div class="grid-item span-2">
+                <div class="item-label">
+                    <i class="fa-solid fa-network-wired"></i> TACTICAL FOKUS IT
+                </div>
+                <div class="item-val neon">SYSTEM ADMINISTRATOR & NETWORK ENGINEERING</div>
+            </div>
+        </div>
+
+        <!-- Football Chant Banner -->
+        <div class="chants-banner">
+            <i class="fa-solid fa-flag"></i> NO ATTACK WITHOUT A STRONG NETWORK! <i class="fa-solid fa-flag"></i>
+        </div>
+
+        <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Tim Pemenangan & Publikasi Ivan Adrian | Hosted on GitHub Pages</p>
+            EST. 2024 // HOSTED ON GITHUB PAGES // FOOTBALL CULTURE EDITION
         </footer>
     </div>
 

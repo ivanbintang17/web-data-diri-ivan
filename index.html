@@ -3,217 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Data Diri</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>IVAN_ADRIAN_ENGINEER_PROFILE</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :root {
+            --bg-color: #080d1a;
+            --card-bg: rgba(13, 25, 48, 0.75);
+            --cyan-glow: #00f0ff;
+            --blue-glow: #3b82f6;
+            --text-main: #e2e8f0;
+            --text-dim: #64748b;
+            --border-glow: rgba(0, 240, 255, 0.25);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Fira Code', monospace;
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #f8fafc;
+            background-color: var(--bg-color);
+            /* Background Grid Pattern ala Blueprint Engineer */
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 30px 20px;
         }
 
-        .container {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            max-width: 800px;
+        .hud-container {
+            max-width: 900px;
             width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 35px rgba(0, 240, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hiasan Sudut ala Interface HUD */
+        .hud-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--cyan-glow), transparent);
+        }
+
+        .system-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--cyan-glow);
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border-bottom: 1px dashed rgba(0, 240, 255, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--cyan-glow);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--cyan-glow);
+            margin-right: 6px;
         }
 
         .profile-header {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
-        .avatar {
-            width: 120px;
-            height: 120px;
+        .avatar-box {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+            border: 2px solid var(--cyan-glow);
             border-radius: 50%;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 50px;
-            color: white;
-            margin: 0 auto 15px;
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+            font-size: 2.8rem;
+            color: var(--cyan-glow);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            background: rgba(0, 240, 255, 0.05);
+            position: relative;
         }
 
         .profile-header h1 {
+            font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
 
-        .profile-header p {
-            color: #94a3b8;
-            font-size: 1rem;
-            margin-top: 5px;
+        .profile-header .tagline {
+            color: var(--cyan-glow);
+            font-size: 0.95rem;
+            margin-top: 8px;
+            letter-spacing: 1px;
         }
 
-        .grid-info {
+        .grid-hud {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
+        .hud-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--cyan-glow);
+            border-radius: 6px;
             padding: 20px;
             transition: all 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(96, 165, 250, 0.3);
+        .hud-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--cyan-glow);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.2);
+            background: rgba(15, 23, 42, 0.85);
         }
 
-        .card-header {
+        .card-label {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .card-header i {
-            font-size: 1.2rem;
-            color: #38bdf8;
-        }
-
-        .card-header h3 {
-            font-size: 0.9rem;
-            color: #94a3b8;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
         }
 
-        .card p {
+        .card-label i {
+            color: var(--cyan-glow);
+        }
+
+        .card-value {
             font-size: 1.05rem;
             font-weight: 600;
-            color: #f1f5f9;
-            line-height: 1.5;
+            color: #fff;
+            word-break: break-word;
+            line-height: 1.4;
         }
 
-        .highlight {
-            color: #38bdf8;
+        .card-value.highlight {
+            color: var(--cyan-glow);
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
         }
 
         footer {
+            margin-top: 35px;
             text-align: center;
-            margin-top: 30px;
-            color: #64748b;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            border-top: 1px dashed rgba(0, 240, 255, 0.2);
+            padding-top: 15px;
         }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 25px;
+            .hud-container {
+                padding: 25px 18px;
             }
             .profile-header h1 {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-header">
-            <div class="avatar">
-                <i class="fa-solid fa-user-graduate"></i>
-            </div>
-            <!-- UBAH NAMA ANDA DI SINI -->
-            <h1>Nama Lengkap Anda</h1>
-            <p>Ivan Adrian Mayzza Bintang</p>
+    <div class="hud-container">
+        <!-- Status Bar ala Terminal Engineer -->
+        <div class="system-status">
+            <div><span class="status-dot"></span>SYSTEM_ONLINE</div>
+            <div>COMPUTER_ENGINEER // NODE_01</div>
         </div>
 
-        <div class="grid-info">
+        <div class="profile-header">
+            <div class="avatar-box">
+                <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <h1>Ivan Adrian Mayzza Bintang</h1>
+            <div class="tagline">&lt;COMPUTER_ENGINEER_IN_TRAINING /&gt;</div>
+        </div>
+
+        <div class="grid-hud">
             <!-- NIM -->
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-id-card"></i>
-                    <h3>NIM</h3>
+            <div class="hud-card">
+                <div class="card-label">
+                    <i class="fa-solid fa-microchip"></i> NIM / ID
                 </div>
-                <!-- UBAH NIM DI SINI -->
-                <p>2405110043</p>
+                <div class="card-value">2405110043</div>
             </div>
 
             <!-- Program Studi -->
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h3>Program Studi</h3>
+            <div class="hud-card">
+                <div class="card-label">
+                    <i class="fa-solid fa-graduation-cap"></i> Program Studi
                 </div>
-                <!-- UBAH PRODI DI SINI -->
-                <p>Teknik Komputer</p>
+                <div class="card-value">Teknik Komputer</div>
             </div>
 
             <!-- Tahun Angkatan -->
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <h3>Tahun Angkatan</h3>
+            <div class="hud-card">
+                <div class="card-label">
+                    <i class="fa-solid fa-layer-group"></i> Angkatan
                 </div>
-                <!-- UBAH ANGKATAN DI SINI -->
-                <p>2024</p>
+                <div class="card-value">Class of 2024</div>
             </div>
 
-            <!-- Kesibukan Selain Kuliah -->
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <h3>Kesibukan Lain</h3>
+            <!-- Kesibukan -->
+            <div class="hud-card">
+                <div class="card-label">
+                    <i class="fa-solid fa-gears"></i> Kesibukan Lain
                 </div>
-                <!-- UBAH KESIBUKAN DI SINI -->
-                <p>Aktif Organisasi Kampus, Event Organizer, Kerja Sampingan</p>
+                <div class="card-value">Aktif Organisasi Kampus, Event Organizer, & Kerja Sampingan</div>
             </div>
 
             <!-- Cita-cita -->
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <h3>Cita-Cita</h3>
+            <div class="hud-card">
+                <div class="card-label">
+                    <i class="fa-solid fa-crosshairs"></i> Visi / Cita-Cita
                 </div>
-                <!-- UBAH CITA-CITA DI SINI -->
-                <p>Menjadi Engineer Profesional di Perusahaan Multinasional</p>
+                <div class="card-value">Merubah Negara Kearah Yang Lebih Baik</div>
             </div>
 
-            <!-- Bidang IT yang Ingin Didalami -->
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    <h3>Fokus Bidang IT</h3>
+            <!-- Bidang IT Fokus -->
+            <div class="hud-card">
+                <div class="card-label">
+                    <i class="fa-solid fa-terminal"></i> Fokus Bidang IT
                 </div>
-                <!-- UBAH BIDANG IT DI SINI -->
-                <p class="highlight">System Administrator & Network Engineering</p>
+                <div class="card-value highlight">System Administrator & Network Engineering</div>
             </div>
         </div>
 
         <footer>
-            <p>&copy; 2026 Web Portofolio Data Diri | Hosted on GitHub Pages</p>
+            [ OK ] DATA_LOADED_SUCCESSFULLY // GITHUB_PAGES_HOSTED
         </footer>
     </div>
 

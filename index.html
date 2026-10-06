@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivan Adrian | Terrace & Football Culture Edition</title>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <title>Ivan Adrian | Street Graffiti Profile</title>
+    <!-- Google Fonts: Graffiti & Street Art Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&family=Sedgwick+Ave+Display&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --pitch-green: #10b981;
-            --stadium-dark: #0a0f0d;
-            --card-bg: #121a16;
-            --neon-yellow: #ccff00;
-            --text-white: #f3f4f6;
-            --text-dim: #829a8c;
-            --border-line: rgba(16, 185, 129, 0.3);
+            --bg-brick: #121113;
+            --graffiti-magenta: #ff007f;
+            --graffiti-cyan: #00f0ff;
+            --graffiti-yellow: #ffee00;
+            --card-bg: rgba(22, 20, 26, 0.88);
+            --text-light: #f8fafc;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Space Grotesk', sans-serif;
         }
 
         body {
-            background-color: var(--stadium-dark);
-            /* Pola Latar Belakang Lapangan / Rumput / Line Stadion */
+            background-color: var(--bg-brick);
+            /* Pola Dinding Bata Urban & Efek Semprotan Cat */
             background-image: 
-                linear-gradient(rgba(16, 185, 129, 0.05) 2px, transparent 2px),
-                linear-gradient(90deg, rgba(16, 185, 129, 0.05) 2px, transparent 2px);
-            background-size: 40px 40px;
-            color: var(--text-white);
+                radial-gradient(circle at 10% 20%, rgba(255, 0, 127, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.2) 0%, transparent 40%),
+                linear-gradient(rgba(255,255,255,0.03) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 2px, transparent 2px);
+            background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+            color: var(--text-light);
+            font-family: 'Space Grotesk', sans-serif;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -41,263 +42,228 @@
             padding: 30px 15px;
         }
 
-        .terrace-card {
+        .street-container {
             max-width: 850px;
             width: 100%;
             background: var(--card-bg);
-            border: 3px solid var(--pitch-green);
-            border-radius: 16px;
-            box-shadow: 12px 12px 0px var(--neon-yellow);
-            padding: 35px;
+            border: 4px solid var(--graffiti-magenta);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 
+                10px 10px 0px var(--graffiti-cyan),
+                -5px -5px 25px rgba(255, 0, 127, 0.3);
             position: relative;
-            overflow: hidden;
+            transform: rotate(-0.5deg);
         }
 
-        /* Pita Matchday Top */
-        .matchday-tape {
+        /* Tag Stiker Liar di Sudut */
+        .street-sticker {
             position: absolute;
-            top: 20px;
-            right: -35px;
-            background: var(--neon-yellow);
+            top: -20px;
+            left: 20px;
+            background: var(--graffiti-yellow);
             color: #000;
-            font-family: 'Teko', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            padding: 4px 40px;
-            transform: rotate(12deg);
-            text-transform: uppercase;
+            font-family: 'Permanent Marker', cursive;
+            padding: 6px 18px;
+            font-size: 1.1rem;
+            transform: rotate(-6deg);
+            box-shadow: 4px 4px 0px #000;
+            border: 2px solid #000;
+        }
+
+        /* Header / Tag Nama Grafiti */
+        .header-graffiti {
+            text-align: center;
+            margin-bottom: 35px;
+            margin-top: 10px;
+        }
+
+        .header-graffiti h1 {
+            font-family: 'Sedgwick Ave Display', cursive;
+            font-size: 3.2rem;
+            color: var(--graffiti-cyan);
+            text-shadow: 
+                3px 3px 0px var(--graffiti-magenta),
+                6px 6px 0px #000;
             letter-spacing: 2px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            z-index: 10;
+            line-height: 1.1;
+            transform: skewX(-5deg);
         }
 
-        .header-terrace {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-bottom: 2px dashed var(--border-line);
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-        }
-
-        /* Badge Logo Klub / Ultras */
-        .crest-badge {
-            width: 90px;
-            height: 90px;
-            background: var(--pitch-green);
-            border: 3px solid var(--neon-yellow);
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.8rem;
-            color: var(--stadium-dark);
-            transform: rotate(-3deg);
-            box-shadow: 4px 4px 0px var(--neon-yellow);
-            flex-shrink: 0;
-        }
-
-        .player-info h1 {
-            font-family: 'Teko', sans-serif;
-            font-size: 3rem;
-            line-height: 0.9;
-            text-transform: uppercase;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .player-info .squad-tag {
+        .header-graffiti .sub-tag {
+            font-family: 'Rock Salt', cursive;
+            color: var(--graffiti-yellow);
+            font-size: 0.95rem;
+            margin-top: 12px;
             display: inline-block;
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--neon-yellow);
-            border: 1px solid var(--pitch-green);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-top: 8px;
-            letter-spacing: 1px;
+            transform: rotate(2deg);
         }
 
-        /* Grid Data Diri ala Lineup / Ticket */
-        .squad-grid {
+        /* Grid Data Diri Street Style */
+        .grid-street {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
         }
 
-        .grid-item {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border-line);
-            border-left: 5px solid var(--pitch-green);
-            border-radius: 8px;
-            padding: 18px;
+        .street-card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
             transition: all 0.2s ease;
         }
 
-        .grid-item:hover {
-            transform: translateY(-3px);
-            border-color: var(--neon-yellow);
-            border-left-color: var(--neon-yellow);
-            background: rgba(16, 185, 129, 0.08);
+        .street-card:hover {
+            transform: scale(1.02) rotate(1deg);
+            border-color: var(--graffiti-cyan);
+            box-shadow: 5px 5px 0px var(--graffiti-magenta);
         }
 
-        .grid-item.span-2 {
+        .street-card.span-2 {
             grid-column: span 2;
         }
 
-        .item-label {
-            font-family: 'Teko', sans-serif;
+        .card-tag-title {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--graffiti-magenta);
             font-size: 1.1rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .item-label i {
-            color: var(--neon-yellow);
+        .card-tag-title i {
+            color: var(--graffiti-yellow);
+            font-size: 1rem;
         }
 
-        .item-val {
+        .card-text {
             font-size: 1.1rem;
             font-weight: 700;
             color: #ffffff;
-            margin-top: 4px;
             line-height: 1.4;
         }
 
-        .item-val.neon {
-            color: var(--neon-yellow);
-            font-family: 'Teko', sans-serif;
-            font-size: 1.6rem;
+        .card-text.spray-highlight {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--graffiti-cyan);
+            font-size: 1.35rem;
+            text-shadow: 2px 2px 0px #000;
             letter-spacing: 1px;
         }
 
-        /* Banner Chants / Slogan Bottom */
-        .chants-banner {
-            margin-top: 30px;
-            background: linear-gradient(90deg, var(--pitch-green), #047857);
-            color: var(--stadium-dark);
-            padding: 15px;
+        /* Banner Semprotan Cat Slogan Bottom */
+        .spray-banner {
+            margin-top: 35px;
+            background: var(--graffiti-magenta);
+            color: #fff;
+            padding: 16px;
             border-radius: 8px;
             text-align: center;
-            font-family: 'Teko', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 4px 4px 0px var(--neon-yellow);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.25rem;
+            transform: rotate(-1deg);
+            box-shadow: 5px 5px 0px var(--graffiti-yellow);
+            border: 2px solid #000;
         }
 
         footer {
-            margin-top: 25px;
+            margin-top: 30px;
             text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            color: #71717a;
             letter-spacing: 1px;
         }
 
         @media (max-width: 650px) {
-            .header-terrace {
-                flex-direction: column;
-                text-align: center;
+            .header-graffiti h1 {
+                font-size: 2.3rem;
             }
-            .player-info h1 {
-                font-size: 2.2rem;
-            }
-            .grid-item.span-2 {
+            .street-card.span-2 {
                 grid-column: span 1;
             }
-            .terrace-card {
-                padding: 25px 18px;
-            }
-            .matchday-tape {
-                display: none;
+            .street-container {
+                padding: 30px 18px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="terrace-card">
-        <!-- Tape Sticker / Ticket Stamp -->
-        <div class="matchday-tape">SQUAD NO #24</div>
+    <div class="street-container">
+        <!-- Stiker Jalanan Tempel -->
+        <div class="street-sticker">STREET ARTIST // TECH</div>
 
-        <!-- Header Profil Ala Jersey / Crest -->
-        <div class="header-terrace">
-            <div class="crest-badge">
-                <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div class="player-info">
-                <h1>Ivan Adrian M. B.</h1>
-                <span class="squad-tag"><i class="fa-solid fa-futbol"></i> COMPUTER ENGINEERING FC</span>
-            </div>
+        <!-- Tag Grafiti Nama -->
+        <div class="header-graffiti">
+            <h1>Ivan Adrian M. B.</h1>
+            <div class="sub-tag">&lt; Computer Engineering Crew /&gt;</div>
         </div>
 
-        <!-- Lineup Squad Details -->
-        <div class="squad-grid">
+        <!-- Grid Data Diri -->
+        <div class="grid-street">
             <!-- NIM -->
-            <div class="grid-item">
-                <div class="item-label">
-                    <i class="fa-solid fa-shirt"></i> SQUAD NUMBER / NIM
+            <div class="street-card">
+                <div class="card-tag-title">
+                    <i class="fa-solid fa-spray-can"></i> TAG ID / NIM
                 </div>
-                <div class="item-val neon">2405110043</div>
+                <div class="card-text spray-highlight">2405110043</div>
             </div>
 
             <!-- Angkatan -->
-            <div class="grid-item">
-                <div class="item-label">
-                    <i class="fa-solid fa-calendar-day"></i> SEASON / ANGKATAN
+            <div class="street-card">
+                <div class="card-tag-title">
+                    <i class="fa-solid fa-fire"></i> GENERATION
                 </div>
-                <div class="item-val">CLASS OF 2024</div>
+                <div class="card-text">Class Of 2024</div>
             </div>
 
             <!-- Program Studi -->
-            <div class="grid-item span-2">
-                <div class="item-label">
-                    <i class="fa-solid fa-graduation-cap"></i> DIVISION / PRODI
+            <div class="street-card span-2">
+                <div class="card-tag-title">
+                    <i class="fa-solid fa-graduation-cap"></i> MAJOR / PRODI
                 </div>
-                <div class="item-val">TEKNIK KOMPUTER</div>
+                <div class="card-text">Teknik Komputer</div>
             </div>
 
             <!-- Kesibukan Lain -->
-            <div class="grid-item span-2">
-                <div class="item-label">
-                    <i class="fa-solid fa-bullhorn"></i> OFF-PITCH ACTIVITIES
+            <div class="street-card span-2">
+                <div class="card-tag-title">
+                    <i class="fa-solid fa-bolt"></i> DAILY HUSTLE
                 </div>
-                <div class="item-val">AKTIF ORGANISASI KAMPUS, EVENT ORGANIZER, & KERJA SAMPINGAN</div>
+                <div class="card-text">Aktif Organisasi Kampus, Event Organizer, & Kerja Sampingan</div>
             </div>
 
             <!-- Cita-Cita -->
-            <div class="grid-item span-2">
-                <div class="item-label">
-                    <i class="fa-solid fa-trophy"></i> MAIN GOAL / CITA-CITA
+            <div class="street-card span-2">
+                <div class="card-tag-title">
+                    <i class="fa-solid fa-crosshairs"></i> THE DREAM
                 </div>
-                <div class="item-val">MENJADI ENGINEER PROFESIONAL DI PERUSAHAAN MULTINASIONAL</div>
+                <div class="card-text">Menjadi Engineer Profesional di Perusahaan Multinasional</div>
             </div>
 
             <!-- Bidang IT Fokus -->
-            <div class="grid-item span-2">
-                <div class="item-label">
-                    <i class="fa-solid fa-network-wired"></i> TACTICAL FOKUS IT
+            <div class="street-card span-2">
+                <div class="card-tag-title">
+                    <i class="fa-solid fa-terminal"></i> IT FOCUS ZONE
                 </div>
-                <div class="item-val neon">SYSTEM ADMINISTRATOR & NETWORK ENGINEERING</div>
+                <div class="card-text spray-highlight">System Administrator & Network Engineering</div>
             </div>
         </div>
 
-        <!-- Football Chant Banner -->
-        <div class="chants-banner">
-            <i class="fa-solid fa-flag"></i> NO ATTACK WITHOUT A STRONG NETWORK! <i class="fa-solid fa-flag"></i>
+        <!-- Slogan Grafiti -->
+        <div class="spray-banner">
+            <i class="fa-solid fa-paintbrush"></i> BOLD CODE, STRONG NETWORK, NO LIMITS!
         </div>
 
         <!-- Footer -->
         <footer>
-            EST. 2024 // HOSTED ON GITHUB PAGES // FOOTBALL CULTURE EDITION
+            URBAN GRAFFITI EDITION // HOSTED ON GITHUB PAGES
         </footer>
     </div>
 
